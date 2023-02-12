@@ -19,7 +19,12 @@ public class Driver {
 
     @Column(nullable = false, updatable = false)
     private String name;
-
+    @OneToOne(
+            fetch = FetchType.LAZY,
+            optional = false,
+            cascade = CascadeType.PERSIST
+    )
+    private License license;
     @OneToOne(
             //a car will only be retrieved from the database when it is explicitly accessed
             fetch = FetchType.LAZY,
@@ -29,4 +34,6 @@ public class Driver {
             cascade = CascadeType.PERSIST
     )
     private Car car;
+
+
 }
