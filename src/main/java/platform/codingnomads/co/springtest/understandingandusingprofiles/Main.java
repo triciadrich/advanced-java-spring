@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
-@Profile("understanding_and_using_profiles")
+@Profile("test2")
 public class Main {
 
     public static void main(String[] args) {

@@ -19,4 +19,8 @@ public class MovieServiceImpl implements MovieService {
     public List<Movie> getAllMovies() {
         return movieRepository.findAll();
     }
+
+    public List<Movie> getAllMoviesMinRating(Double rating){
+        return movieRepository.findAllByRatingGreaterThanEqual(rating);
+    }
 }

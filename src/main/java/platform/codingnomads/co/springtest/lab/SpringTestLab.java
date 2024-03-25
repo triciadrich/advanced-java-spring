@@ -23,11 +23,13 @@ public class SpringTestLab implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        if (movieRepository.findAll().isEmpty()) {
-            movieRepository.saveAll(Arrays.asList(
-                    Movie.builder().name("The Shawshank Redemption").rating(9.3).build(),
-                    Movie.builder().name("The Pursuit of Happyness").rating(8.0).build()
-            ));
+//        if (movieRepository.findAll().isEmpty()) {
+//            movieRepository.saveAll(Arrays.asList(
+//                    Movie.builder().name("The Shawshank Redemption").rating(9.3).build(),
+//                    Movie.builder().name("The Pursuit of Happyness").rating(8.0).build()
+//            ));
+//        }
+
         }
-    }
 }
+

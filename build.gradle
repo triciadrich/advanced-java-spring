@@ -6,6 +6,7 @@ plugins {
     id 'java'
     id 'java-library'
     id 'idea'
+
 }
 
 group = 'platform.codingnomads.co'
@@ -20,6 +21,8 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
+
+
 }
 
 repositories {
@@ -47,6 +50,9 @@ dependencies {
 //    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.28.Final'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.projectlombok:lombok:1.18.24'
+
+
+
 
     runtimeOnly 'mysql:mysql-connector-java'
 

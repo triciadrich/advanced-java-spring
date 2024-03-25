@@ -49,4 +49,13 @@ public class TestingWebServices {
                 //the view name expected is greeting
                 .andExpect(view().name("greeting"));
     }
+
+    @Test
+    public void shouldRedirect() throws Exception{
+        mockMvc
+                .perform(get("/exitName"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/"))
+                .andExpect(header().string("Location", "/"));
+    }
 }

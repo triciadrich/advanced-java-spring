@@ -21,4 +21,23 @@ public class HomeController {
     public String greet() {
         return "Hello Back";
     }
+
+    @GetMapping("/wave")
+    public String wave(){
+        return "waving";
+    }
+
+    @GetMapping("/goodbye")
+    public String goodbye(){
+        return "goodbye";
+    }
+
+    @GetMapping("/exitName")
+    public String name(){
+
+        return "redirect:/";
+
+    }
 }
+
+
