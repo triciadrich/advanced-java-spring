@@ -1,6 +1,7 @@
 package platform.codingnomads.co.springsecurity.authentication.configuringmorefilters;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -9,6 +10,7 @@ import org.springframework.security.web.SecurityFilterChain;
 //it is commented out here only so it does not interfere with other example packages
 //@Configuration
 @EnableWebSecurity
+
 public class ChannelSecurityConfigExample {
 
     @Bean
