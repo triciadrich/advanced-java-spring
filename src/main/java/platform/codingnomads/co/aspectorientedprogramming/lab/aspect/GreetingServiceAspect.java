@@ -1,5 +1,6 @@
 package platform.codingnomads.co.aspectorientedprogramming.lab.aspect;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
@@ -11,11 +12,11 @@ import org.springframework.stereotype.Component;
 
 
 
-
+@Slf4j
 @Aspect
 @Component
 public class GreetingServiceAspect {
-        private static final Logger LOGGER = LoggerFactory.getLogger(GreetingServiceAspect.class);
+
 
         @Pointcut(value = "execution(* platform.codingnomads.co.aspectorientedprogramming.lab.service.GreetingService.goodbye())")
         private void goodbyePoint(){
@@ -25,16 +26,16 @@ public class GreetingServiceAspect {
 
         @Before("execution(* platform.codingnomads.co.aspectorientedprogramming.lab.service.GreetingService.greeting())")
         private void logBeforeGreeting(JoinPoint joinPoint){
-          LOGGER.info("Before method : " + joinPoint.getSignature().getName());
+          log.info("Before method : " + joinPoint.getSignature().getName());
         }
 
         @AfterReturning("execution(* platform.codingnomads.co.aspectorientedprogramming.lab.service.GreetingService.greeting())")
         private void logAfterReturning(JoinPoint joinPoint){
-            LOGGER.info("After returning : "+ joinPoint.getSignature().getName());
+            log.info("After returning : "+ joinPoint.getSignature().getName());
         }
 
         @Before("goodbyePoint()")
         private void logBeforeGoodbye(JoinPoint joinPoint){
-            LOGGER.info("Before goodbye : " + joinPoint.getSignature().getName());
+            log.info("Before goodbye : " + joinPoint.getSignature().getName());
         }
 }
